@@ -14,14 +14,19 @@ const routes = require('./routes.config');
 // });
 
 // ADD THIS
-//var cors = require('cors');
-//app.use(cors());
+var cors = require('cors');
+app.use(cors());
 
 app.use(express.json());
+
+// app.use((req, res, next) => {
+//     console.log("first middleware");
+//     next();
+// })
 
 routes.routesConfig(app); 
 
 
-app.listen(3000, function () {
-    console.log('app listening at port %s', 3000);
+app.listen(4000, function () {
+    console.log('app listening at port %s', 4000);
 });
